@@ -10,13 +10,23 @@ function QuoteBox() {
         dispatch(updateQuote());
     }, [dispatch]);
 
-    return (
-        <div className="App">
-            <p>Quote: {quoteSlice.quote}</p>
-            <p>by: {quoteSlice.author}</p>
-            <button onClick={() => dispatch(updateQuote())}>Get quote</button>
-        </div>
-    );
+    if (quoteSlice.status === "Loading") {
+        return (
+            <div id="Loading">
+                <p>Loading...</p>
+            </div>
+        );
+    } else if (quoteSlice.status === "Fulfilled") {
+
+        return (
+            <div id="quote-box">
+                <p id="text">Quote: {quoteSlice.quote}</p>
+                <p id="author">by: {quoteSlice.author}</p>
+                <button id="new-quote" onClick={() => dispatch(updateQuote())}>Get quote</button>
+                <a id="tweet-quote" href='twitter.com/intent/tweet'>Tweet</a>
+            </div >
+        );
+    }
 }
 
 export default QuoteBox;
