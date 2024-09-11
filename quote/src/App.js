@@ -1,11 +1,14 @@
 import './App.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateQuote } from './features/quote';
 
 function App() {
-  const quoteSlice = useSelector((state) => state.quote.value);
+  const quoteSlice = useSelector((state) => state.quote.quote);
+  const dispatch = useDispatch();
   return (
     <div className="App">
-      <p>Quote: {quoteSlice.value}</p>
+      <p>Quote: {quoteSlice}</p>
+      <button onClick={() => dispatch(updateQuote())}>Get quote</button>
     </div>
   );
 }
