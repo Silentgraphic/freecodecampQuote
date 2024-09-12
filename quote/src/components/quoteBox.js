@@ -13,15 +13,16 @@ function QuoteBox() {
     if (quoteSlice.status === "Loading") {
         return (
             <div id="Loading">
-                <p>Loading...</p>
+                <span>Loading...</span>
             </div>
         );
     } else if (quoteSlice.status === "Fulfilled") {
 
         return (
             <div id="quote-box">
-                <p id="text">Quote: {quoteSlice.quote}</p>
-                <p id="author">by: {quoteSlice.author}</p>
+                <h2>Get a Random Quote</h2>
+                <p id="text">{quoteSlice.quote}</p>
+                <i id="author">by: {quoteSlice.author}</i>
                 <button id="new-quote" onClick={() => dispatch(updateQuote())}>Get quote</button>
                 <a id="tweet-quote" href='twitter.com/intent/tweet'>Tweet</a>
             </div >
