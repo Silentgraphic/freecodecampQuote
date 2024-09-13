@@ -17,11 +17,10 @@ function QuoteBox() {
             </div>
         );
     } else if (quoteSlice.status === "Fulfilled") {
-
         return (
             <div id="quote-box">
-                <h2>Get a Random Quote</h2>
-                <p id="text">{quoteSlice.quote}</p>
+                <h1>Get a Random Quote</h1>
+                <q id="text">{quoteSlice.quote}</q>
                 <i id="author">by: {quoteSlice.author}</i>
                 <button id="new-quote" onClick={() => dispatch(updateQuote())}>Get quote</button>
                 <a id="tweet-quote" href='twitter.com/intent/tweet'>Tweet</a>
