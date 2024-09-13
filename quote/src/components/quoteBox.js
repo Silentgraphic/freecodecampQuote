@@ -10,22 +10,35 @@ function QuoteBox() {
         dispatch(updateQuote());
     }, [dispatch]);
 
-    if (quoteSlice.status === "Loading") {
-        return (
-            <div id="Loading">
-                <span>Loading...</span>
-            </div>
-        );
-    } else if (quoteSlice.status === "Fulfilled") {
-        return (
-            <div id="quote-box">
-                <h1>Get a Random Quote</h1>
-                <q id="text">{quoteSlice.quote}</q>
-                <i id="author">by: {quoteSlice.author}</i>
-                <button id="new-quote" onClick={() => dispatch(updateQuote())}>Get quote</button>
-                <a id="tweet-quote" href='twitter.com/intent/tweet'>Tweet</a>
-            </div >
-        );
+    switch (quoteSlice.status) {
+        case "Loading":
+            return (
+                <div id="Loading">
+                    <span>Loading...</span>
+                </div>
+            );
+        case "Fulfilled":
+            return (
+                <div id="quote-box">
+                    <h1>Get a Random Quote</h1>
+                    <q id="text">{quoteSlice.quote}</q>
+                    <i id="author">by: {quoteSlice.author}</i>
+                    <button id="new-quote" onClick={() => dispatch(updateQuote())}>Get quote</button>
+                    <a id="tweet-quote" href='twitter.com/intent/tweet'>Tweet</a>
+                </div >
+            );
+        case "Error":
+            return (
+                <div id="Error">
+                    <span>{quoteSlice.quote}</span>
+                </div>
+            );
+        default:
+            return (
+                <div>
+                    <span>Something went wrong!</span>
+                </div>
+            );
     }
 }
 
