@@ -21,7 +21,8 @@ body {
     font-family: American Typewriter, serif;
 }
 
-#Loading {
+#Loading,
+#Error {
     font-size: 2rem;
     margin: 10px;
 }

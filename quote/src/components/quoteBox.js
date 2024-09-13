@@ -31,6 +31,7 @@ function QuoteBox() {
             return (
                 <div id="Error">
                     <span>{quoteSlice.quote}</span>
+                    <button id="new-quote" onClick={() => dispatch(updateQuote())} style={{ visibility: "none" }}>Get quote</button>
                 </div>
             );
         default:
