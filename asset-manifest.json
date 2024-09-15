@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/freecodecampQuote/static/css/main.bebeae85.css",
-    "main.js": "/freecodecampQuote/static/js/main.5e6e8285.js",
+    "main.js": "/freecodecampQuote/static/js/main.22fd31b7.js",
     "index.html": "/freecodecampQuote/index.html",
     "main.bebeae85.css.map": "/freecodecampQuote/static/css/main.bebeae85.css.map",
-    "main.5e6e8285.js.map": "/freecodecampQuote/static/js/main.5e6e8285.js.map"
+    "main.22fd31b7.js.map": "/freecodecampQuote/static/js/main.22fd31b7.js.map"
   },
   "entrypoints": [
     "static/css/main.bebeae85.css",
-    "static/js/main.5e6e8285.js"
+    "static/js/main.22fd31b7.js"
   ]
 }
